@@ -14,6 +14,7 @@
 		BAD59893242E710600D77AAF /* FanGo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAD59891242E710600D77AAF /* FanGo.xcdatamodeld */; };
 		BAD59895242E710A00D77AAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD59894242E710A00D77AAF /* Assets.xcassets */; };
 		BAD59898242E710A00D77AAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD59896242E710A00D77AAF /* LaunchScreen.storyboard */; };
+		BAD598A3242E73FB00D77AAF /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD598A2242E73FB00D77AAF /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BAD59894242E710A00D77AAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAD59897242E710A00D77AAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAD59899242E710A00D77AAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAD598A2242E73FB00D77AAF /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,41 @@
 		BAD59887242E710600D77AAF /* FanGo */ = {
 			isa = PBXGroup;
 			children = (
+				BAD598A1242E718C00D77AAF /* Model */,
+				BAD5989F242E718200D77AAF /* Controller */,
+				BAD598A0242E718800D77AAF /* View */,
 				BAD59888242E710600D77AAF /* AppDelegate.swift */,
 				BAD5988A242E710600D77AAF /* SceneDelegate.swift */,
-				BAD5988C242E710600D77AAF /* ViewController.swift */,
-				BAD5988E242E710600D77AAF /* Main.storyboard */,
 				BAD59894242E710A00D77AAF /* Assets.xcassets */,
-				BAD59896242E710A00D77AAF /* LaunchScreen.storyboard */,
 				BAD59899242E710A00D77AAF /* Info.plist */,
-				BAD59891242E710600D77AAF /* FanGo.xcdatamodeld */,
 			);
 			path = FanGo;
+			sourceTree = "<group>";
+		};
+		BAD5989F242E718200D77AAF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BAD5988C242E710600D77AAF /* ViewController.swift */,
+				BAD598A2242E73FB00D77AAF /* File.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BAD598A0242E718800D77AAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAD59896242E710A00D77AAF /* LaunchScreen.storyboard */,
+				BAD5988E242E710600D77AAF /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAD598A1242E718C00D77AAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BAD59891242E710600D77AAF /* FanGo.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD598A3242E73FB00D77AAF /* File.swift in Sources */,
 				BAD5988D242E710600D77AAF /* ViewController.swift in Sources */,
 				BAD59893242E710600D77AAF /* FanGo.xcdatamodeld in Sources */,
 				BAD59889242E710600D77AAF /* AppDelegate.swift in Sources */,
