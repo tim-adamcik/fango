@@ -9,25 +9,25 @@
 /* Begin PBXBuildFile section */
 		BAD59889242E710600D77AAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD59888242E710600D77AAF /* AppDelegate.swift */; };
 		BAD5988B242E710600D77AAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD5988A242E710600D77AAF /* SceneDelegate.swift */; };
-		BAD5988D242E710600D77AAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD5988C242E710600D77AAF /* ViewController.swift */; };
 		BAD59890242E710600D77AAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD5988E242E710600D77AAF /* Main.storyboard */; };
 		BAD59893242E710600D77AAF /* FanGo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAD59891242E710600D77AAF /* FanGo.xcdatamodeld */; };
 		BAD59895242E710A00D77AAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD59894242E710A00D77AAF /* Assets.xcassets */; };
 		BAD59898242E710A00D77AAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD59896242E710A00D77AAF /* LaunchScreen.storyboard */; };
-		BAD598A3242E73FB00D77AAF /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD598A2242E73FB00D77AAF /* File.swift */; };
+		BAD598A3242E73FB00D77AAF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD598A2242E73FB00D77AAF /* MapViewController.swift */; };
+		BAD598A5242E75D300D77AAF /* StadiumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD598A4242E75D300D77AAF /* StadiumListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BAD59885242E710600D77AAF /* FanGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FanGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD59888242E710600D77AAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD5988A242E710600D77AAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BAD5988C242E710600D77AAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BAD5988F242E710600D77AAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAD59892242E710600D77AAF /* FanGo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FanGo.xcdatamodel; sourceTree = "<group>"; };
 		BAD59894242E710A00D77AAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAD59897242E710A00D77AAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAD59899242E710A00D77AAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAD598A2242E73FB00D77AAF /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		BAD598A2242E73FB00D77AAF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BAD598A4242E75D300D77AAF /* StadiumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +74,8 @@
 		BAD5989F242E718200D77AAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BAD5988C242E710600D77AAF /* ViewController.swift */,
-				BAD598A2242E73FB00D77AAF /* File.swift */,
+				BAD598A2242E73FB00D77AAF /* MapViewController.swift */,
+				BAD598A4242E75D300D77AAF /* StadiumListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,9 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAD598A3242E73FB00D77AAF /* File.swift in Sources */,
-				BAD5988D242E710600D77AAF /* ViewController.swift in Sources */,
+				BAD598A3242E73FB00D77AAF /* MapViewController.swift in Sources */,
 				BAD59893242E710600D77AAF /* FanGo.xcdatamodeld in Sources */,
+				BAD598A5242E75D300D77AAF /* StadiumListViewController.swift in Sources */,
 				BAD59889242E710600D77AAF /* AppDelegate.swift in Sources */,
 				BAD5988B242E710600D77AAF /* SceneDelegate.swift in Sources */,
 			);

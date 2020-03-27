@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  StadiumListViewController.swift
 //  FanGo
 //
 //  Created by Timothy Adamcik on 3/27/20.
@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
-import MapKit
 
-class MapViewController: ViewController, MKMapViewDelegate {
+class StadiumListViewController: UIViewController {
+    
+    @IBOutlet weak var stadiumListTableView: UITableView!
     
 }
