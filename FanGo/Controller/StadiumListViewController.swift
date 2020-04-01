@@ -18,16 +18,42 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         stadiumListTableView.delegate = self
         stadiumListTableView.dataSource = self
+        loadTableView()
     }
     
+    func loadTableView() {
+        _ = SportsDataClient.getStadiums(completion: { (stadiums, error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    let alertVC = UIAlertController(title: "Error", message: "Error retrieving data", preferredStyle: .alert)
+                    alertVC.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                    self.present(alertVC, animated: true)
+                    print(error.localizedDescription)
+                }
+            } else {
+                if let stadiums = stadiums {
+                    StadiumArray.stadiums = stadiums
+                    DispatchQueue.main.async {
+                        self.stadiumListTableView.reloadData()
+                    }
+                }
+            }
+        })
+    }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        StadiumArray.stadiums.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
-        cell.label.text = "hello"
+        let stadium = StadiumArray.stadiums[indexPath.row]
+        
+        cell.label.text = stadium.name
+        
         
         return cell
     }

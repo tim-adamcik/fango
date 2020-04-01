@@ -24,18 +24,16 @@ class SportsDataClient {
         var stringValue: String {
             switch self {
             case .stadiumNFL:
-                return "https://api.sportsdata.io/v3/nfl/scores/json/Stadiums\(Endpoints.apiKeyParadigm)"
+                return "https://api.sportsdata.io/v3/nfl/scores/json/Stadiums?key=691e2a5362cd48fead96337d6a88762f"
             }
         }
     }
     
-    func getStadiums(completion: @escaping ([Stadium]?, Error?) -> Void) {
+   class func getStadiums(completion: @escaping ([Stadium]?, Error?) -> Void) {
         
-        guard let url = URL(string: Endpoints.stadiumNFL.stringValue) else {
-            completion(nil, NetworkingError.invalidURL)
-            return
-        }
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+
+        
+    let task = URLSession.shared.dataTask(with: Endpoints.stadiumNFL.url) { (data, response, error) in
             
             if let error = error {
                 completion(nil, error)

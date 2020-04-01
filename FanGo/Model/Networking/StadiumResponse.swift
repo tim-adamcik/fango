@@ -12,9 +12,9 @@ struct Stadium: Codable {
     let stadiumID: Int
     let name: String
     let city: String
-    let state: String
-    let geoLat: Double
-    let geoLon: Double
+    let state: String?
+    let geoLat: Decimal
+    let geoLon: Decimal
     
     
     enum CodingKeys: String, CodingKey {
@@ -22,8 +22,8 @@ struct Stadium: Codable {
         case name = "Name"
         case city = "City"
         case state = "State"
-        case geoLat
-        case geoLon
+        case geoLat = "GeoLat"
+        case geoLon = "GeoLong"
         
     }
 }

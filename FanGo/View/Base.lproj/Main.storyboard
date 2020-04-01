@@ -71,7 +71,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="label" destination="kqv-O8-lNR" id="nnh-pg-R3A"/>
+                                            <outlet property="label" destination="kqv-O8-lNR" id="uJK-av-2jE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
