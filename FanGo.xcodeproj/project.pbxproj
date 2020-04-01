@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BABAECC02434E387007EDB47 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECBF2434E387007EDB47 /* TableViewCell.swift */; };
+		BABAECC324350BCD007EDB47 /* SportsDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECC224350BCD007EDB47 /* SportsDataClient.swift */; };
+		BABAECC524350BDD007EDB47 /* StadiumResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECC424350BDD007EDB47 /* StadiumResponse.swift */; };
 		BAD59889242E710600D77AAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD59888242E710600D77AAF /* AppDelegate.swift */; };
 		BAD5988B242E710600D77AAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD5988A242E710600D77AAF /* SceneDelegate.swift */; };
 		BAD59890242E710600D77AAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD5988E242E710600D77AAF /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		BABAECBF2434E387007EDB47 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		BABAECC224350BCD007EDB47 /* SportsDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsDataClient.swift; sourceTree = "<group>"; };
+		BABAECC424350BDD007EDB47 /* StadiumResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumResponse.swift; sourceTree = "<group>"; };
 		BAD59885242E710600D77AAF /* FanGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FanGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD59888242E710600D77AAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD5988A242E710600D77AAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BABAECC124350B79007EDB47 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BABAECC224350BCD007EDB47 /* SportsDataClient.swift */,
+				BABAECC424350BDD007EDB47 /* StadiumResponse.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		BAD5987C242E710600D77AAF = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +108,7 @@
 		BAD598A1242E718C00D77AAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BABAECC124350B79007EDB47 /* Networking */,
 				BAD59891242E710600D77AAF /* FanGo.xcdatamodeld */,
 			);
 			path = Model;
@@ -171,11 +185,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BABAECC324350BCD007EDB47 /* SportsDataClient.swift in Sources */,
 				BAD598A3242E73FB00D77AAF /* MapViewController.swift in Sources */,
 				BAD59893242E710600D77AAF /* FanGo.xcdatamodeld in Sources */,
 				BAD598A5242E75D300D77AAF /* StadiumListViewController.swift in Sources */,
 				BABAECC02434E387007EDB47 /* TableViewCell.swift in Sources */,
 				BAD59889242E710600D77AAF /* AppDelegate.swift in Sources */,
+				BABAECC524350BDD007EDB47 /* StadiumResponse.swift in Sources */,
 				BAD5988B242E710600D77AAF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
