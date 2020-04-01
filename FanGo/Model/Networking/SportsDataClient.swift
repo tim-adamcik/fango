@@ -29,6 +29,35 @@ class SportsDataClient {
         }
     }
     
-    
+    func getStadiums(completion: @escaping ([Stadium]?, Error?) -> Void) {
+        
+        guard let url = URL(string: Endpoints.stadiumNFL.stringValue) else {
+            completion(nil, NetworkingError.invalidURL)
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            if let error = error {
+                completion(nil, error)
+            }
+            
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode == 200 else {
+                completion(nil, NetworkingError.httpError)
+                return }
+            
+            guard let data = data else {
+                completion(nil, NetworkingError.nilData)
+                return }
+            
+            let decoder = JSONDecoder()
+            do {
+                let responseObject = try decoder.decode([Stadium].self, from: data)
+                completion(responseObject, nil)
+            } catch {
+                completion(nil, error)
+            }
+        }
+        task.resume()
+    }
     
 }
