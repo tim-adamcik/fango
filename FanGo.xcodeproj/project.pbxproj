@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BABAECC02434E387007EDB47 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECBF2434E387007EDB47 /* TableViewCell.swift */; };
 		BAD59889242E710600D77AAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD59888242E710600D77AAF /* AppDelegate.swift */; };
 		BAD5988B242E710600D77AAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD5988A242E710600D77AAF /* SceneDelegate.swift */; };
 		BAD59890242E710600D77AAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD5988E242E710600D77AAF /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BABAECBF2434E387007EDB47 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BAD59885242E710600D77AAF /* FanGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FanGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD59888242E710600D77AAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD5988A242E710600D77AAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				BAD59896242E710A00D77AAF /* LaunchScreen.storyboard */,
 				BAD5988E242E710600D77AAF /* Main.storyboard */,
+				BABAECBF2434E387007EDB47 /* TableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				BAD598A3242E73FB00D77AAF /* MapViewController.swift in Sources */,
 				BAD59893242E710600D77AAF /* FanGo.xcdatamodeld in Sources */,
 				BAD598A5242E75D300D77AAF /* StadiumListViewController.swift in Sources */,
+				BABAECC02434E387007EDB47 /* TableViewCell.swift in Sources */,
 				BAD59889242E710600D77AAF /* AppDelegate.swift in Sources */,
 				BAD5988B242E710600D77AAF /* SceneDelegate.swift in Sources */,
 			);
