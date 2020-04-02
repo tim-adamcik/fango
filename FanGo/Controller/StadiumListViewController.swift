@@ -33,6 +33,7 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
             } else {
                 if let stadiums = stadiums {
                     StadiumArray.stadiums = stadiums
+                    print(stadiums)
                     DispatchQueue.main.async {
                         self.stadiumListTableView.reloadData()
                     }

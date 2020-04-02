@@ -13,8 +13,8 @@ struct Stadium: Codable {
     let name: String
     let city: String
     let state: String?
-    let geoLat: Decimal
-    let geoLon: Decimal
+    let geoLat: Double
+    let geoLon: Double
     
     
     enum CodingKeys: String, CodingKey {
