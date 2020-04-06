@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA821669243BBB9C00F2C575 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA821668243BBB9C00F2C575 /* DetailsViewController.swift */; };
 		BABAECC02434E387007EDB47 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECBF2434E387007EDB47 /* TableViewCell.swift */; };
 		BABAECC324350BCD007EDB47 /* SportsDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECC224350BCD007EDB47 /* SportsDataClient.swift */; };
 		BABAECC524350BDD007EDB47 /* StadiumResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECC424350BDD007EDB47 /* StadiumResponse.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA821668243BBB9C00F2C575 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BABAECBF2434E387007EDB47 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BABAECC224350BCD007EDB47 /* SportsDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsDataClient.swift; sourceTree = "<group>"; };
 		BABAECC424350BDD007EDB47 /* StadiumResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumResponse.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				BAD598A2242E73FB00D77AAF /* MapViewController.swift */,
 				BAD598A4242E75D300D77AAF /* StadiumListViewController.swift */,
+				BA821668243BBB9C00F2C575 /* DetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				BABAECC02434E387007EDB47 /* TableViewCell.swift in Sources */,
 				BAD59889242E710600D77AAF /* AppDelegate.swift in Sources */,
 				BABAECC524350BDD007EDB47 /* StadiumResponse.swift in Sources */,
+				BA821669243BBB9C00F2C575 /* DetailsViewController.swift in Sources */,
 				BAD5988B242E710600D77AAF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

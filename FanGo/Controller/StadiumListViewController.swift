@@ -16,6 +16,7 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let detailVC: DetailsViewController = DetailsViewController()
         stadiumListTableView.delegate = self
         stadiumListTableView.dataSource = self
         loadTableView()
@@ -55,8 +56,16 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
         
         cell.label.text = stadium.name
         
-        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "DetailsViewController") as! DetailsViewController
+        let stadium = StadiumArray.stadiums[indexPath.row]
+        vc.currentStadiumName = stadium.name
+        vc.currentCityName = stadium.city
+        vc.currentStateName = stadium.state
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
