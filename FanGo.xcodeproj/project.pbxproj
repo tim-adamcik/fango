@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA57D4ED243D0C91002627D9 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA57D4EC243D0C91002627D9 /* CollectionViewCell.swift */; };
 		BA821669243BBB9C00F2C575 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA821668243BBB9C00F2C575 /* DetailsViewController.swift */; };
 		BABAECC02434E387007EDB47 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECBF2434E387007EDB47 /* TableViewCell.swift */; };
 		BABAECC324350BCD007EDB47 /* SportsDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECC224350BCD007EDB47 /* SportsDataClient.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA57D4EC243D0C91002627D9 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		BA821668243BBB9C00F2C575 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BABAECBF2434E387007EDB47 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BABAECC224350BCD007EDB47 /* SportsDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsDataClient.swift; sourceTree = "<group>"; };
@@ -106,9 +108,10 @@
 		BAD598A0242E718800D77AAF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BABAECBF2434E387007EDB47 /* TableViewCell.swift */,
 				BAD59896242E710A00D77AAF /* LaunchScreen.storyboard */,
 				BAD5988E242E710600D77AAF /* Main.storyboard */,
-				BABAECBF2434E387007EDB47 /* TableViewCell.swift */,
+				BA57D4EC243D0C91002627D9 /* CollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,9 +119,9 @@
 		BAD598A1242E718C00D77AAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BABAECC124350B79007EDB47 /* Networking */,
 				BAD59891242E710600D77AAF /* FanGo.xcdatamodeld */,
 				BABAECC824351DFD007EDB47 /* StadiumArray.swift */,
+				BABAECC124350B79007EDB47 /* Networking */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			files = (
 				BABAECC324350BCD007EDB47 /* SportsDataClient.swift in Sources */,
 				BAD598A3242E73FB00D77AAF /* MapViewController.swift in Sources */,
+				BA57D4ED243D0C91002627D9 /* CollectionViewCell.swift in Sources */,
 				BABAECC724351A1A007EDB47 /* NetworkingErrors.swift in Sources */,
 				BAD59893242E710600D77AAF /* FanGo.xcdatamodeld in Sources */,
 				BAD598A5242E75D300D77AAF /* StadiumListViewController.swift in Sources */,

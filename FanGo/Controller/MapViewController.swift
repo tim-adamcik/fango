@@ -23,6 +23,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         pinStadiumsOnMap()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     func pinStadiumsOnMap() {
         annotations = []
         mapView.removeAnnotations(mapView.annotations)

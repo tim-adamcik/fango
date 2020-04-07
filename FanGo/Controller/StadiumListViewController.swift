@@ -16,10 +16,14 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let detailVC: DetailsViewController = DetailsViewController()
         stadiumListTableView.delegate = self
         stadiumListTableView.dataSource = self
         loadTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
     }
     
     func loadTableView() {

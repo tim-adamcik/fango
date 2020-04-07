@@ -19,6 +19,10 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var stateName: UILabel!
+    @IBOutlet weak var haveVisitedLabel: UILabel!
+    @IBOutlet weak var haveVisitedSwitch: UISwitch!
+    @IBOutlet weak var notesBtn: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     
     var currentStadiumName: String?
@@ -28,10 +32,15 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        notesBtn.layer.cornerRadius = 5
+        notesBtn.layer.borderWidth = 1
         navigationController?.title = "Details"
         stadiumName.text = currentStadiumName
         cityName.text = currentCityName
         stateName.text = currentStateName
+        tabBarController?.tabBar.isHidden = true
         setTeamNames()
     }
     
@@ -48,5 +57,26 @@ class DetailsViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction func notesBtnPressed(_ sender: Any) {
+    }
+    
+    @IBAction func addPhotoButton(_ sender: Any) {
+    }
+    
+}
 
+extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+        return cell
+    }
+    
+    
 }
