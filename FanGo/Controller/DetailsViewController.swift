@@ -12,13 +12,14 @@ import UIKit
 class DetailsViewController: UIViewController {
     
     @IBOutlet weak var stadiumLabel: UILabel!
+    @IBOutlet weak var stadiumName: UILabel!
     @IBOutlet weak var teamLabel: UILabel!
+    @IBOutlet weak var teamName: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var stateLabel: UILabel!
-    @IBOutlet weak var stadiumTextField: UITextField!
-    @IBOutlet weak var teamTextField: UITextField!
-    @IBOutlet weak var cityTextField: UITextField!
-    @IBOutlet weak var stateTextField: UITextField!
+    @IBOutlet weak var stateName: UILabel!
+    
     
     var currentStadiumName: String?
     var currentTeamName: String?
@@ -28,8 +29,8 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.title = "Details"
-        stadiumTextField.text = currentStadiumName
-        cityTextField.text = currentCityName
-        stateTextField.text = currentStateName
+        stadiumName.text = currentStadiumName
+        cityName.text = currentCityName
+        stateName.text = currentStateName
     }
 }

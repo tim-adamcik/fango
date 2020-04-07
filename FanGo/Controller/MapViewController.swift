@@ -40,4 +40,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         mapView.addAnnotations(annotations)
     }
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "idForView"
+        var view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        if view == nil {
+            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view!.canShowCallout = true
+            view!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            return view
+        } else {
+            view!.annotation = annotation
+        }
+        return view
+    }
+    
 }
