@@ -32,5 +32,21 @@ class DetailsViewController: UIViewController {
         stadiumName.text = currentStadiumName
         cityName.text = currentCityName
         stateName.text = currentStateName
+        setTeamNames()
     }
+    
+    func setTeamNames() {
+         let dictOfStadiumAndTeams = StadiumArray.dictOfStadiumAndTeams
+         let stadiumKeys = StadiumArray.stadiumKeys
+        
+        for _ in stadiumKeys {
+            if let stadium = stadiumName.text {
+                let team = dictOfStadiumAndTeams[stadium]
+                teamName.text = team
+            } else {
+                print("Error setting team names")
+            }
+        }
+    }
+
 }
