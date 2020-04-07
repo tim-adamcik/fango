@@ -54,4 +54,19 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         return view
     }
     
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let vc = storyboard?.instantiateViewController(identifier: "DetailsViewController") as! DetailsViewController
+        let pin = view.annotation as? MKPointAnnotation
+        
+        for stadium in StadiumArray.stadiums {
+            if stadium.geoLat == pin?.coordinate.latitude &&
+                stadium.geoLon == pin?.coordinate.longitude {
+                vc.currentStadiumName = stadium.name
+                vc.currentCityName = stadium.city
+                vc.currentStateName = stadium.state
+            }
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
