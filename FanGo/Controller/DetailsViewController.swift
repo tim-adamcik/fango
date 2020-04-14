@@ -41,6 +41,7 @@ class DetailsViewController: UIViewController {
         cityName.text = currentCityName
         stateName.text = currentStateName
         tabBarController?.tabBar.isHidden = true
+        haveVisitedSwitch.isOn = false
         setTeamNames()
     }
     
@@ -60,6 +61,8 @@ class DetailsViewController: UIViewController {
     
     
     @IBAction func notesBtnPressed(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "NotesViewController") as! NotesViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func addPhotoButton(_ sender: Any) {
