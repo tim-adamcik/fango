@@ -13,6 +13,9 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var stadiumListTableView: UITableView!
     
+    static var savedStadiumObject = [StadiumDetails]()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +41,7 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
             } else {
                 if let stadiums = stadiums {
                     StadiumArray.stadiums = stadiums
+                    self.saveStadiumToCoreData(stadiums: stadiums)
                     print(stadiums)
                     DispatchQueue.main.async {
                         self.stadiumListTableView.reloadData()
@@ -47,16 +51,32 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
         })
     }
     
+    func saveStadiumToCoreData(stadiums: [Stadium]) {
+        for stadium in StadiumArray.stadiums {
+            let stadiumDetail = StadiumDetails(context: DataController.shared.viewContext)
+            stadiumDetail.name = stadium.name
+            stadiumDetail.city = stadium.city
+            if let state = stadium.state {
+                stadiumDetail.state = state
+            }
+            stadiumDetail.latitude = stadium.geoLat
+            stadiumDetail.longitude = stadium.geoLon
+            StadiumListViewController.savedStadiumObject.append(stadiumDetail)
+            DataController.shared.save()
+        }
+    }
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        StadiumArray.stadiums.count
+        StadiumListViewController.savedStadiumObject.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
-        let stadium = StadiumArray.stadiums[indexPath.row]
+        let stadium = StadiumListViewController.savedStadiumObject[indexPath.row]
         
         cell.label.text = stadium.name
         

@@ -18,9 +18,9 @@ class DataController {
         self.modelName = modelName
     }
     
-    lazy var viewContext: NSManagedObjectContext = {
-        return persistentContainer.viewContext
-    }()
+     lazy var viewContext: NSManagedObjectContext = {
+           return persistentContainer.viewContext
+       }()
     
     lazy var persistentContainer: NSPersistentContainer = {
         /*
@@ -51,7 +51,7 @@ class DataController {
     
     // MARK: - Core Data Saving support
     
-    func saveContext () {
+    func save() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {

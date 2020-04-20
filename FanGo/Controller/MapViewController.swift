@@ -16,7 +16,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var annotations: [MKPointAnnotation] = [MKPointAnnotation]()
     let locationManager = CLLocationManager()
-    
+    let pins = StadiumListViewController.savedStadiumObject
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-        pinStadiumsOnMap()
+//        pinStadiumsOnMap()
+        pinStadiumsFromCoreData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,17 +52,33 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         print("Error: \(error)")
     }
     
-    func pinStadiumsOnMap() {
+//    func pinStadiumsOnMap() {
+//        annotations = []
+//        mapView.removeAnnotations(mapView.annotations)
+//
+//        for stadium in StadiumArray.stadiums {
+//            let annotation: MKPointAnnotation = MKPointAnnotation()
+//            if let lat = CLLocationDegrees(exactly: stadium.geoLat), let lon = CLLocationDegrees(exactly: stadium.geoLon) {
+//                let coordinateLocation = CLLocationCoordinate2DMake(lat, lon)
+//                annotation.coordinate = coordinateLocation
+//                annotation.title = stadium.name
+//                annotation.subtitle = stadium.city
+//                annotations.append(annotation)
+//            }
+//        }
+//        mapView.addAnnotations(annotations)
+//    }
+    
+    func pinStadiumsFromCoreData() {
         annotations = []
         mapView.removeAnnotations(mapView.annotations)
-        
-        for stadium in StadiumArray.stadiums {
+        for pin in pins {
             let annotation: MKPointAnnotation = MKPointAnnotation()
-            if let lat = CLLocationDegrees(exactly: stadium.geoLat), let lon = CLLocationDegrees(exactly: stadium.geoLon) {
-                let coordinateLocation = CLLocationCoordinate2DMake(lat, lon)
+            if let lat = CLLocationDegrees(exactly: pin.latitude), let lon = CLLocationDegrees(exactly: pin.longitude) {
+                let coordinateLocation = CLLocationCoordinate2D(latitude: lat, longitude: lon)
                 annotation.coordinate = coordinateLocation
-                annotation.title = stadium.name
-                annotation.subtitle = stadium.city
+                annotation.title = pin.name
+                annotation.subtitle = pin.city
                 annotations.append(annotation)
             }
         }
