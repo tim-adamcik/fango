@@ -16,7 +16,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var annotations: [MKPointAnnotation] = [MKPointAnnotation]()
     let locationManager = CLLocationManager()
-    let pins = StadiumListViewController.savedStadiumObject
+    let pins = CoreDataStadiums.shared.savedStadiumObjects
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +29,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         pinStadiumsFromCoreData()
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
+        pinStadiumsFromCoreData()
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BA1C228624460F29002439E0 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C228524460F29002439E0 /* NotesViewController.swift */; };
 		BA1C228824461BAC002439E0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C228724461BAC002439E0 /* DataController.swift */; };
+		BA226588244F550300430547 /* CoreDataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA226587244F550300430547 /* CoreDataSingleton.swift */; };
 		BA57D4ED243D0C91002627D9 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA57D4EC243D0C91002627D9 /* CollectionViewCell.swift */; };
 		BA821669243BBB9C00F2C575 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA821668243BBB9C00F2C575 /* DetailsViewController.swift */; };
 		BABAECC02434E387007EDB47 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECBF2434E387007EDB47 /* TableViewCell.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		BA1C228524460F29002439E0 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		BA1C228724461BAC002439E0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		BA226587244F550300430547 /* CoreDataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSingleton.swift; sourceTree = "<group>"; };
 		BA57D4EC243D0C91002627D9 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		BA821668243BBB9C00F2C575 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BABAECBF2434E387007EDB47 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -126,8 +128,9 @@
 			children = (
 				BAD59891242E710600D77AAF /* FanGo.xcdatamodeld */,
 				BABAECC824351DFD007EDB47 /* StadiumArray.swift */,
-				BABAECC124350B79007EDB47 /* Networking */,
 				BA1C228724461BAC002439E0 /* DataController.swift */,
+				BABAECC124350B79007EDB47 /* Networking */,
+				BA226587244F550300430547 /* CoreDataSingleton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BABAECC324350BCD007EDB47 /* SportsDataClient.swift in Sources */,
+				BA226588244F550300430547 /* CoreDataSingleton.swift in Sources */,
 				BAD598A3242E73FB00D77AAF /* MapViewController.swift in Sources */,
 				BA57D4ED243D0C91002627D9 /* CollectionViewCell.swift in Sources */,
 				BABAECC724351A1A007EDB47 /* NetworkingErrors.swift in Sources */,

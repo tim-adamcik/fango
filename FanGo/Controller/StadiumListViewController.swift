@@ -8,20 +8,58 @@
 
 import Foundation
 import UIKit
+import CoreData
 
-class StadiumListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class StadiumListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var stadiumListTableView: UITableView!
     
-    static var savedStadiumObject = [StadiumDetails]()
+//    static var savedStadiumObjects = [StadiumDetails]()
+    var fetchedResultsController: NSFetchedResultsController<StadiumDetails>!
     
-    
+    fileprivate func reloadSavedData() -> [StadiumDetails]? {
+        
+        var detailsArray: [StadiumDetails] = []
+        let fetchRequest: NSFetchRequest<StadiumDetails> = StadiumDetails.fetchRequest()
+        let sortDesctriptor: NSSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDesctriptor]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataController.shared.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
+        
+        do {
+            try fetchedResultsController.performFetch()
+            let detailsCount = try fetchedResultsController.managedObjectContext.count(for: fetchedResultsController.fetchRequest)
+            
+            for index in 0..<detailsCount {
+                detailsArray.append(fetchedResultsController.object(at: IndexPath(row: index, section: 0)))
+            }
+            return detailsArray
+        } catch {
+            print("error performing fetch")
+            return nil
+        }
+    }
+    fileprivate func downLoadNewStadiumInformation() {
+        deleteExistingCoreDataStadiumDetail()
+        CoreDataStadiums.shared.savedStadiumObjects.removeAll()
+        loadTableView()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         stadiumListTableView.delegate = self
         stadiumListTableView.dataSource = self
-        loadTableView()
+        
+        let savedStadiums = reloadSavedData()
+        if savedStadiums != nil && savedStadiums?.count != 0 {
+            CoreDataStadiums.shared.savedStadiumObjects = savedStadiums!
+            DispatchQueue.main.async {
+                self.stadiumListTableView.reloadData()
+            }
+        } else {
+            downLoadNewStadiumInformation()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,8 +99,16 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
             }
             stadiumDetail.latitude = stadium.geoLat
             stadiumDetail.longitude = stadium.geoLon
-            StadiumListViewController.savedStadiumObject.append(stadiumDetail)
+            CoreDataStadiums.shared.savedStadiumObjects.append(stadiumDetail)
             DataController.shared.save()
+        }
+    }
+    
+    func deleteExistingCoreDataStadiumDetail() {
+        
+        for object in CoreDataStadiums.shared.savedStadiumObjects {
+            
+            DataController.shared.viewContext.delete(object)
         }
     }
     
@@ -71,12 +117,12 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        StadiumListViewController.savedStadiumObject.count
+        CoreDataStadiums.shared.savedStadiumObjects.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
-        let stadium = StadiumListViewController.savedStadiumObject[indexPath.row]
+        let stadium = CoreDataStadiums.shared.savedStadiumObjects[indexPath.row]
         
         cell.label.text = stadium.name
         
@@ -85,10 +131,10 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "DetailsViewController") as! DetailsViewController
-        let stadium = StadiumArray.stadiums[indexPath.row]
-        vc.currentStadiumName = stadium.name
-        vc.currentCityName = stadium.city
-        vc.currentStateName = stadium.state
+        let stadiumDetail = CoreDataStadiums.shared.savedStadiumObjects[indexPath.row]
+        vc.currentStadiumName = stadiumDetail.name
+        vc.currentCityName = stadiumDetail.city
+        vc.currentStateName = stadiumDetail.state
         navigationController?.pushViewController(vc, animated: true)
     }
     
