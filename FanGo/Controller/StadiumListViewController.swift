@@ -135,6 +135,7 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
         vc.currentStadiumName = stadiumDetail.name
         vc.currentCityName = stadiumDetail.city
         vc.currentStateName = stadiumDetail.state
+        vc.stadiumDetail = stadiumDetail
         navigationController?.pushViewController(vc, animated: true)
     }
     

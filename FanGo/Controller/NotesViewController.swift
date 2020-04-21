@@ -12,12 +12,17 @@ import UIKit
 class NotesViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var textField: UITextView!
+    @IBOutlet weak var teamLabel: UILabel!
+    
+    var stadiumDetail: StadiumDetails!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.text = "Click here to add notes"
         textField.textColor = .lightGray
         navigationController?.title = "Notes"
+        
+        teamLabel.text = stadiumDetail.teamName
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

@@ -29,6 +29,7 @@ class DetailsViewController: UIViewController {
     var currentTeamName: String?
     var currentCityName: String?
     var currentStateName: String?
+    var stadiumDetail: StadiumDetails!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,12 @@ class DetailsViewController: UIViewController {
         stateName.text = currentStateName
         tabBarController?.tabBar.isHidden = true
         haveVisitedSwitch.isOn = false
-        setTeamNames()
+        
+        if let team = stadiumDetail.teamName {
+            teamName.text = team
+        } else {
+            setTeamNames()
+        }
     }
     
     func setTeamNames() {
@@ -53,6 +59,8 @@ class DetailsViewController: UIViewController {
             if let stadium = stadiumName.text {
                 let team = dictOfStadiumAndTeams[stadium]
                 teamName.text = team
+                stadiumDetail.teamName = team
+                DataController.shared.save()
             } else {
                 print("Error setting team names")
             }
@@ -62,6 +70,8 @@ class DetailsViewController: UIViewController {
     
     @IBAction func notesBtnPressed(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "NotesViewController") as! NotesViewController
+        let stadiumDetail = self.stadiumDetail
+        vc.stadiumDetail = stadiumDetail
         navigationController?.pushViewController(vc, animated: true)
     }
     
