@@ -12,8 +12,6 @@ import UIKit
 class NotesViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var textField: UITextView!
-    @IBOutlet weak var teamLabel: UILabel!
-    
     var stadiumDetail: StadiumDetails!
     
     override func viewDidLoad() {
@@ -22,7 +20,7 @@ class NotesViewController: UIViewController, UITextViewDelegate {
         textField.textColor = .lightGray
         navigationController?.title = "Notes"
         
-        teamLabel.text = stadiumDetail.teamName
+        
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

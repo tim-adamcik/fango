@@ -42,8 +42,12 @@ class DetailsViewController: UIViewController {
         cityName.text = currentCityName
         stateName.text = currentStateName
         tabBarController?.tabBar.isHidden = true
-        haveVisitedSwitch.isOn = false
         
+        if stadiumDetail.haveVisited == true {
+            haveVisitedSwitch.isOn = true
+        } else {
+            haveVisitedSwitch.isOn = false
+        }
         if let team = stadiumDetail.teamName {
             teamName.text = team
         } else {
@@ -76,6 +80,17 @@ class DetailsViewController: UIViewController {
     }
     
     @IBAction func addPhotoButton(_ sender: Any) {
+    }
+    
+    @IBAction func switchBtnTapped(_ sender: Any) {
+        if haveVisitedSwitch.isOn == true {
+            stadiumDetail.haveVisited = true
+            DataController.shared.save()
+        } else {
+            stadiumDetail.haveVisited = false
+            DataController.shared.save()
+        }
+        
     }
     
 }
