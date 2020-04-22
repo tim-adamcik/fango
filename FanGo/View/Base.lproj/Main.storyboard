@@ -202,7 +202,7 @@
                                 <items>
                                     <barButtonItem image="square.and.arrow.up" catalog="system" id="2rT-NK-rpF">
                                         <connections>
-                                            <action selector="addPhotoButton:" destination="keF-Tj-hbe" id="mOG-8B-UJt"/>
+                                            <action selector="shareBtnPressed:" destination="keF-Tj-hbe" id="mOG-8B-UJt"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -283,9 +283,11 @@
                         <outlet property="cityLabel" destination="Voh-jV-qcD" id="bz0-1U-08W"/>
                         <outlet property="cityName" destination="6Kh-UE-yqB" id="gp6-Nw-FQQ"/>
                         <outlet property="collectionView" destination="XZZ-tz-0xl" id="oou-Wr-nWU"/>
+                        <outlet property="flowLayout" destination="zmi-Z2-h6C" id="gHB-MS-rGU"/>
                         <outlet property="haveVisitedLabel" destination="oxl-E4-L49" id="PYm-4q-hHC"/>
                         <outlet property="haveVisitedSwitch" destination="zom-Rs-tfo" id="jrd-XN-QJR"/>
                         <outlet property="notesBtn" destination="U9Z-k9-A5x" id="sHJ-Bf-yKF"/>
+                        <outlet property="shareBtn" destination="2rT-NK-rpF" id="ZU9-di-AgM"/>
                         <outlet property="stadiumLabel" destination="2Pg-5k-PKc" id="aKh-EU-pa1"/>
                         <outlet property="stadiumName" destination="DZK-rU-1uU" id="vZD-cU-ylS"/>
                         <outlet property="stateLabel" destination="lZh-ML-uGD" id="FpI-g8-nQB"/>

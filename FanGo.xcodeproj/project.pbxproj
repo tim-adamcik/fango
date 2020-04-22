@@ -129,8 +129,8 @@
 				BAD59891242E710600D77AAF /* FanGo.xcdatamodeld */,
 				BABAECC824351DFD007EDB47 /* StadiumArray.swift */,
 				BA1C228724461BAC002439E0 /* DataController.swift */,
-				BABAECC124350B79007EDB47 /* Networking */,
 				BA226587244F550300430547 /* CoreDataSingleton.swift */,
+				BABAECC124350B79007EDB47 /* Networking */,
 			);
 			path = Model;
 			sourceTree = "<group>";

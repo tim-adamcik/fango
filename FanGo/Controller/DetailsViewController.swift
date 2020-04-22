@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class DetailsViewController: UIViewController {
     
@@ -22,14 +23,24 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var haveVisitedLabel: UILabel!
     @IBOutlet weak var haveVisitedSwitch: UISwitch!
     @IBOutlet weak var notesBtn: UIButton!
+    @IBOutlet weak var shareBtn: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     var currentStadiumName: String?
     var currentTeamName: String?
     var currentCityName: String?
     var currentStateName: String?
     var stadiumDetail: StadiumDetails!
+    var savedPhotos: [Photo]?
+    var images: [UIImage] = []
+    let numberOfColumns: CGFloat = 3
+    
+    lazy var addPhotoBtn: UIBarButtonItem = {
+        let barBtnItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPhotoBtnPressed(_:)))
+        return barBtnItem
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +52,7 @@ class DetailsViewController: UIViewController {
         stadiumName.text = currentStadiumName
         cityName.text = currentCityName
         stateName.text = currentStateName
+        navigationItem.rightBarButtonItem = addPhotoBtn
         tabBarController?.tabBar.isHidden = true
         
         if stadiumDetail.haveVisited == true {
@@ -79,7 +91,7 @@ class DetailsViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func addPhotoButton(_ sender: Any) {
+    @IBAction func shareBtnPressed(_ sender: Any) {
     }
     
     @IBAction func switchBtnTapped(_ sender: Any) {
@@ -98,13 +110,58 @@ class DetailsViewController: UIViewController {
 extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
+        images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+        
+        let cellImage = images[indexPath.row]
+        cell.imageView.image = cellImage
+        
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+             let width = collectionView.frame.width / numberOfColumns
+             return CGSize(width: width, height: width)
+         }
+      
+      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+             return .zero
+         }
+         
+         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+             return 0
+         }
+         
+         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+             return 0
+         }
 }
+    
+    extension DetailsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        
+        @objc func addPhotoBtnPressed(_ sender: UIBarButtonItem) {
+            let pickerController = UIImagePickerController()
+            pickerController.delegate = self
+            pickerController.sourceType = .photoLibrary
+            present(pickerController, animated: true, completion: nil)
+        }
+        
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let image = info[.originalImage] as? UIImage {
+                images.append(image)
+                self.collectionView.reloadData()
+            }
+            dismiss(animated: true, completion: nil)
+        }
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            dismiss(animated: true, completion: nil)
+        }
+        
+    }
+    
+    
+

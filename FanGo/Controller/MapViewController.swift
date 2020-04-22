@@ -16,7 +16,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var annotations: [MKPointAnnotation] = [MKPointAnnotation]()
     let locationManager = CLLocationManager()
-    let pins = CoreDataStadiums.shared.savedStadiumObjects
+    var pins = [StadiumDetails]()
+    
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +28,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-//        pinStadiumsOnMap()
-        pinStadiumsFromCoreData()
+        
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
+        pins = CoreDataStadiums.shared.savedStadiumObjects
         pinStadiumsFromCoreData()
     }
+    
+    
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
@@ -105,12 +109,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let vc = storyboard?.instantiateViewController(identifier: "DetailsViewController") as! DetailsViewController
         let pin = view.annotation as? MKPointAnnotation
         
-        for stadium in StadiumArray.stadiums {
-            if stadium.geoLat == pin?.coordinate.latitude &&
-                stadium.geoLon == pin?.coordinate.longitude {
-                vc.currentStadiumName = stadium.name
-                vc.currentCityName = stadium.city
-                vc.currentStateName = stadium.state
+        for stadiumDetail in pins {
+            if stadiumDetail.latitude == pin?.coordinate.latitude &&
+            stadiumDetail.longitude == pin?.coordinate.longitude {
+                vc.currentStadiumName = stadiumDetail.name
+                vc.currentCityName = stadiumDetail.city
+                vc.currentStateName = stadiumDetail.state
+                vc.stadiumDetail = stadiumDetail
             }
         }
         navigationController?.pushViewController(vc, animated: true)
