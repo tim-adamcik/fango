@@ -238,19 +238,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o6S-V5-SDq">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7qx-4a-9M0">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="o6S-V5-SDq" firstAttribute="top" secondItem="4qg-W2-CD8" secondAttribute="top" id="Kfc-UK-rhL"/>
-                                                <constraint firstItem="o6S-V5-SDq" firstAttribute="leading" secondItem="4qg-W2-CD8" secondAttribute="leading" id="LFm-l6-2gB"/>
-                                                <constraint firstAttribute="bottom" secondItem="o6S-V5-SDq" secondAttribute="bottom" id="hch-5b-w6W"/>
-                                                <constraint firstAttribute="trailing" secondItem="o6S-V5-SDq" secondAttribute="trailing" id="zcZ-N3-LhG"/>
+                                                <constraint firstAttribute="bottom" secondItem="7qx-4a-9M0" secondAttribute="bottom" id="6xu-km-ar6"/>
+                                                <constraint firstAttribute="trailing" secondItem="7qx-4a-9M0" secondAttribute="trailing" id="H3q-69-rx6"/>
+                                                <constraint firstItem="7qx-4a-9M0" firstAttribute="leading" secondItem="4qg-W2-CD8" secondAttribute="leading" id="QhQ-x4-NgJ"/>
+                                                <constraint firstItem="7qx-4a-9M0" firstAttribute="top" secondItem="4qg-W2-CD8" secondAttribute="top" id="oBy-nd-4o6"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="imageView" destination="o6S-V5-SDq" id="fjo-pI-aoW"/>
+                                            <outlet property="imageView" destination="7qx-4a-9M0" id="Whf-4O-3m7"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
