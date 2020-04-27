@@ -32,7 +32,7 @@ class DetailsViewController: UIViewController {
     var currentCityName: String?
     var currentStateName: String?
     var stadiumDetail: StadiumDetails!
-    var savedPhotos: [Photo]?
+    var savedPhotos = [Photo]()
     var images: [UIImage] = []
     let numberOfColumns: CGFloat = 3
     
@@ -64,6 +64,11 @@ class DetailsViewController: UIViewController {
             teamName.text = team
         } else {
             setTeamNames()
+        }
+        
+        savedPhotos = (stadiumDetail.photos?.allObjects as! [Photo])
+        if savedPhotos.count > 0 {
+            collectionView.reloadData()
         }
     }
     
@@ -110,14 +115,16 @@ class DetailsViewController: UIViewController {
 extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        images.count
+        savedPhotos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         
-        let cellImage = images[indexPath.row]
-        cell.imageView.image = cellImage
+        let photo = savedPhotos[indexPath.row]
+        cell.setUpCell(photo)
+//        let cellImage = images[indexPath.row]
+//        cell.imageView.image = cellImage
         
         return cell
     }
@@ -153,7 +160,7 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
             if let image = info[.originalImage] as? UIImage {
                 images.append(image)
                 if let imageData = image.pngData() {
-                    saveImage(data: imageData)
+                    saveImageToCoreData(data: imageData)
                 }
                 self.collectionView.reloadData()
             }
@@ -164,11 +171,11 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
             dismiss(animated: true, completion: nil)
         }
         
-        func saveImage(data: Data) {
+        func saveImageToCoreData(data: Data) {
             let photo = Photo(context: DataController.shared.viewContext)
             photo.imageData = data
             photo.stadium = stadiumDetail
-            savedPhotos?.append(photo)
+            savedPhotos.append(photo)
             DataController.shared.save()
             print("image was saved")
         }

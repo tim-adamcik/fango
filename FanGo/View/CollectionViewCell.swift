@@ -13,4 +13,13 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    func setUpCell(_ photo: Photo) {
+        
+        if photo.imageData != nil {
+            DispatchQueue.main.async {
+                self.imageView.image = UIImage(data: photo.imageData! as Data)
+            }
+        }
+    }
+    
 }
