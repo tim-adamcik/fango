@@ -13,28 +13,30 @@ class NotesViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var textField: UITextView!
     var stadiumDetail: StadiumDetails!
+    var savedText = Note()
+    var savedNote: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textField.text = "Click here to add notes"
-        textField.textColor = .lightGray
+        textField.delegate = self
         navigationController?.title = "Notes"
         
         
+    
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
-            textView.text = ""
-            textView.textColor = UIColor.black
-        }
+        
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = "Click here to add notes"
-            textView.textColor = .lightGray
-        }
+        let note = Note(context: DataController.shared.viewContext)
+        note.text = textField.text
+        note.stadium = stadiumDetail
+        savedNote = textField.text
+        DataController.shared.save()
+        print("note was saved")
     }
     
+
 }
