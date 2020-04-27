@@ -123,7 +123,7 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-             let width = collectionView.frame.width / numberOfColumns
+             let width = collectionView.frame.width / numberOfColumns - 2
              return CGSize(width: width, height: width)
          }
       
@@ -132,7 +132,7 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
          }
          
          func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-             return 0
+             return 3
          }
          
          func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -152,6 +152,9 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let image = info[.originalImage] as? UIImage {
                 images.append(image)
+                if let imageData = image.pngData() {
+                    saveImage(data: imageData)
+                }
                 self.collectionView.reloadData()
             }
             dismiss(animated: true, completion: nil)
@@ -159,6 +162,15 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             dismiss(animated: true, completion: nil)
+        }
+        
+        func saveImage(data: Data) {
+            let photo = Photo(context: DataController.shared.viewContext)
+            photo.imageData = data
+            photo.stadium = stadiumDetail
+            savedPhotos?.append(photo)
+            DataController.shared.save()
+            print("image was saved")
         }
         
     }
