@@ -12,6 +12,11 @@ import CoreData
 
 class DetailsViewController: UIViewController {
     
+    enum Mode {
+        case view
+        case select
+    }
+    
     @IBOutlet weak var stadiumLabel: UILabel!
     @IBOutlet weak var stadiumName: UILabel!
     @IBOutlet weak var teamLabel: UILabel!
@@ -23,7 +28,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var haveVisitedLabel: UILabel!
     @IBOutlet weak var haveVisitedSwitch: UISwitch!
     @IBOutlet weak var notesBtn: UIButton!
-    @IBOutlet weak var shareBtn: UIBarButtonItem!
+    @IBOutlet weak var deleteBtn: UIBarButtonItem!
+    @IBOutlet weak var selectBtn: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
@@ -36,10 +42,34 @@ class DetailsViewController: UIViewController {
     var images: [UIImage] = []
     let numberOfColumns: CGFloat = 3
     
+    var mMode: Mode = .view {
+        didSet {
+            switch mMode {
+            case .view:
+                selectBtn.isEnabled = true
+                deleteBtn.isEnabled = false
+                addPhotoBtn.isEnabled = true
+                navigationItem.leftBarButtonItem = nil
+                collectionView.allowsMultipleSelection = false
+            case .select:
+                selectBtn.isEnabled = false
+                deleteBtn.isEnabled = true
+                addPhotoBtn.isEnabled = false
+                navigationItem.leftBarButtonItem = cancelBtn
+                collectionView.allowsMultipleSelection = true
+            }
+        }
+    }
+    
     lazy var addPhotoBtn: UIBarButtonItem = {
         let barBtnItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPhotoBtnPressed(_:)))
         return barBtnItem
     }()
+   lazy var cancelBtn: UIBarButtonItem = {
+       let barBtnItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelBtnPressed(_:)))
+       return barBtnItem
+   }()
+    
     
     
     override func viewDidLoad() {
@@ -54,6 +84,7 @@ class DetailsViewController: UIViewController {
         stateName.text = currentStateName
         navigationItem.rightBarButtonItem = addPhotoBtn
         tabBarController?.tabBar.isHidden = true
+        deleteBtn.isEnabled = false
         
         if stadiumDetail.haveVisited == true {
             haveVisitedSwitch.isOn = true
@@ -96,8 +127,18 @@ class DetailsViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func shareBtnPressed(_ sender: Any) {
+    @objc func cancelBtnPressed(_ sender: UIBarButtonItem) {
+        mMode = mMode == .select ? .view : .select
     }
+    
+    @IBAction func deleteBtnPressed(_ sender: Any) {
+        mMode = mMode == .select ? .view : .select
+    }
+    
+    @IBAction func selectBtnPressed(_ sender: Any) {
+        mMode = mMode == .view ? .select : .view
+    }
+    
     
     @IBAction func switchBtnTapped(_ sender: Any) {
         if haveVisitedSwitch.isOn == true {
@@ -123,28 +164,43 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
         
         let photo = savedPhotos[indexPath.row]
         cell.setUpCell(photo)
-//        let cellImage = images[indexPath.row]
-//        cell.imageView.image = cellImage
+        //        let cellImage = images[indexPath.row]
+        //        cell.imageView.image = cellImage
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-             let width = collectionView.frame.width / numberOfColumns - 2
-             return CGSize(width: width, height: width)
-         }
-      
-      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-             return .zero
-         }
-         
-         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-             return 3
-         }
-         
-         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-             return 0
-         }
+        let width = collectionView.frame.width / numberOfColumns - 2
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if selectBtn.isEnabled == false {
+            let cell = collectionView.cellForItem(at: indexPath)
+            if cell?.isSelected == true {
+                cell?.layer.borderColor = UIColor.blue.cgColor
+                cell?.layer.borderWidth = 3
+            }
+        } else {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "SharePhotoViewController") as! SharePhotoViewController
+            let savedPhoto = savedPhotos[indexPath.row]
+            vc.photo = savedPhoto
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
     
     extension DetailsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

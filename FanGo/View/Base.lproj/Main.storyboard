@@ -200,9 +200,14 @@
                                     <constraint firstAttribute="height" constant="44" id="RtB-V7-nm9"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem image="square.and.arrow.up" catalog="system" id="2rT-NK-rpF">
+                                    <barButtonItem title="Item" image="trash" catalog="system" id="1XE-5M-lxr" userLabel="Delete Btn">
                                         <connections>
-                                            <action selector="shareBtnPressed:" destination="keF-Tj-hbe" id="mOG-8B-UJt"/>
+                                            <action selector="deleteBtnPressed:" destination="keF-Tj-hbe" id="KKM-XX-ZdZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Select" id="RX7-A9-8Vx">
+                                        <connections>
+                                            <action selector="selectBtnPressed:" destination="keF-Tj-hbe" id="bEg-Gg-qTa"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -283,11 +288,12 @@
                         <outlet property="cityLabel" destination="Voh-jV-qcD" id="bz0-1U-08W"/>
                         <outlet property="cityName" destination="6Kh-UE-yqB" id="gp6-Nw-FQQ"/>
                         <outlet property="collectionView" destination="XZZ-tz-0xl" id="oou-Wr-nWU"/>
+                        <outlet property="deleteBtn" destination="1XE-5M-lxr" id="jEf-GH-qhv"/>
                         <outlet property="flowLayout" destination="zmi-Z2-h6C" id="gHB-MS-rGU"/>
                         <outlet property="haveVisitedLabel" destination="oxl-E4-L49" id="PYm-4q-hHC"/>
                         <outlet property="haveVisitedSwitch" destination="zom-Rs-tfo" id="jrd-XN-QJR"/>
                         <outlet property="notesBtn" destination="U9Z-k9-A5x" id="sHJ-Bf-yKF"/>
-                        <outlet property="shareBtn" destination="2rT-NK-rpF" id="ZU9-di-AgM"/>
+                        <outlet property="selectBtn" destination="RX7-A9-8Vx" id="QhS-dU-GqO"/>
                         <outlet property="stadiumLabel" destination="2Pg-5k-PKc" id="aKh-EU-pa1"/>
                         <outlet property="stadiumName" destination="DZK-rU-1uU" id="vZD-cU-ylS"/>
                         <outlet property="stateLabel" destination="lZh-ML-uGD" id="FpI-g8-nQB"/>
@@ -299,6 +305,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SiC-rG-EVn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2179.7101449275365" y="108.48214285714285"/>
+        </scene>
+        <!--Share Photo View Controller-->
+        <scene sceneID="nJE-Oy-YV3">
+            <objects>
+                <viewController storyboardIdentifier="SharePhotoViewController" id="uSE-5w-OAL" customClass="SharePhotoViewController" customModule="FanGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="erG-2s-0Ol">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Irn-Vm-u8j">
+                                <rect key="frame" x="0.0" y="44" width="414" height="774"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfv-ce-KyU">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="qqu-F2-pTs"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem image="square.and.arrow.up" catalog="system" id="62B-ZI-d35">
+                                        <connections>
+                                            <action selector="shareBtnPressed:" destination="uSE-5w-OAL" id="Vvo-9n-uhR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vfv-ce-KyU" firstAttribute="trailing" secondItem="yWx-mi-zUT" secondAttribute="trailing" id="Ljh-SP-v11"/>
+                            <constraint firstItem="Irn-Vm-u8j" firstAttribute="top" secondItem="yWx-mi-zUT" secondAttribute="top" id="RRV-kU-QxB"/>
+                            <constraint firstItem="vfv-ce-KyU" firstAttribute="bottom" secondItem="yWx-mi-zUT" secondAttribute="bottom" id="ZCW-nh-Bab"/>
+                            <constraint firstItem="Irn-Vm-u8j" firstAttribute="trailing" secondItem="yWx-mi-zUT" secondAttribute="trailing" id="Zgu-RG-AHG"/>
+                            <constraint firstItem="vfv-ce-KyU" firstAttribute="top" secondItem="Irn-Vm-u8j" secondAttribute="bottom" id="sQq-pk-SJJ"/>
+                            <constraint firstItem="vfv-ce-KyU" firstAttribute="leading" secondItem="yWx-mi-zUT" secondAttribute="leading" id="yXJ-cK-OZ3"/>
+                            <constraint firstItem="Irn-Vm-u8j" firstAttribute="leading" secondItem="yWx-mi-zUT" secondAttribute="leading" id="yvv-RO-vJi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yWx-mi-zUT"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Irn-Vm-u8j" id="GxB-au-oUP"/>
+                        <outlet property="shareBtn" destination="62B-ZI-d35" id="SeF-1n-lJ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R9R-BP-EX1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3430.434782608696" y="550.44642857142856"/>
         </scene>
         <!--Notes View Controller-->
         <scene sceneID="eBc-ts-3fU">
@@ -327,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3h-kw-Iuy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3137.68115942029" y="112.5"/>
+            <point key="canvasLocation" x="3425" y="-202"/>
         </scene>
         <!--Map-->
         <scene sceneID="x54-bz-ZmZ">
@@ -381,5 +433,6 @@
         <image name="map" catalog="system" width="128" height="113"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="table" catalog="system" width="128" height="93"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
     </resources>
 </document>

@@ -17,6 +17,7 @@
 		BABAECC524350BDD007EDB47 /* StadiumResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECC424350BDD007EDB47 /* StadiumResponse.swift */; };
 		BABAECC724351A1A007EDB47 /* NetworkingErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECC624351A1A007EDB47 /* NetworkingErrors.swift */; };
 		BABAECC924351DFD007EDB47 /* StadiumArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECC824351DFD007EDB47 /* StadiumArray.swift */; };
+		BAC295E82458AFE7007BF2C3 /* SharePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC295E72458AFE7007BF2C3 /* SharePhotoViewController.swift */; };
 		BAD59889242E710600D77AAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD59888242E710600D77AAF /* AppDelegate.swift */; };
 		BAD5988B242E710600D77AAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD5988A242E710600D77AAF /* SceneDelegate.swift */; };
 		BAD59890242E710600D77AAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD5988E242E710600D77AAF /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		BABAECC424350BDD007EDB47 /* StadiumResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumResponse.swift; sourceTree = "<group>"; };
 		BABAECC624351A1A007EDB47 /* NetworkingErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingErrors.swift; sourceTree = "<group>"; };
 		BABAECC824351DFD007EDB47 /* StadiumArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumArray.swift; sourceTree = "<group>"; };
+		BAC295E72458AFE7007BF2C3 /* SharePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhotoViewController.swift; sourceTree = "<group>"; };
 		BAD59885242E710600D77AAF /* FanGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FanGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD59888242E710600D77AAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD5988A242E710600D77AAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				BAD598A4242E75D300D77AAF /* StadiumListViewController.swift */,
 				BA821668243BBB9C00F2C575 /* DetailsViewController.swift */,
 				BA1C228524460F29002439E0 /* NotesViewController.swift */,
+				BAC295E72458AFE7007BF2C3 /* SharePhotoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				BAD598A3242E73FB00D77AAF /* MapViewController.swift in Sources */,
 				BA57D4ED243D0C91002627D9 /* CollectionViewCell.swift in Sources */,
 				BABAECC724351A1A007EDB47 /* NetworkingErrors.swift in Sources */,
+				BAC295E82458AFE7007BF2C3 /* SharePhotoViewController.swift in Sources */,
 				BAD59893242E710600D77AAF /* FanGo.xcdatamodeld in Sources */,
 				BAD598A5242E75D300D77AAF /* StadiumListViewController.swift in Sources */,
 				BABAECC924351DFD007EDB47 /* StadiumArray.swift in Sources */,
