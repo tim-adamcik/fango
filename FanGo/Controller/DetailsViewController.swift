@@ -158,6 +158,7 @@ class DetailsViewController: UIViewController {
                 }
             }
         }
+        collectionView.reloadData()
         mMode = mMode == .select ? .view : .select
     }
     
@@ -190,8 +191,6 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
         
         let photo = savedPhotos[indexPath.row]
         cell.setUpCell(photo)
-        //        let cellImage = images[indexPath.row]
-        //        cell.imageView.image = cellImage
         
         return cell
     }
