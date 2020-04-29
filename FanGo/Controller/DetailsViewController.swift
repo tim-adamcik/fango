@@ -33,6 +33,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
+    
     var currentStadiumName: String?
     var currentTeamName: String?
     var currentCityName: String?
@@ -50,6 +51,14 @@ class DetailsViewController: UIViewController {
                 deleteBtn.isEnabled = false
                 addPhotoBtn.isEnabled = true
                 navigationItem.leftBarButtonItem = nil
+                if let selectedItems = collectionView.indexPathsForSelectedItems {
+                    for selection in selectedItems {
+                        let cell = collectionView.cellForItem(at: selection)
+                        cell?.layer.borderColor = UIColor.clear.cgColor
+                        cell?.layer.borderWidth = 3
+                        collectionView.deselectItem(at: selection, animated: true)
+                    }
+                }
                 collectionView.allowsMultipleSelection = false
             case .select:
                 selectBtn.isEnabled = false
@@ -72,10 +81,7 @@ class DetailsViewController: UIViewController {
     
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
+    fileprivate func setUpUI() {
         notesBtn.layer.cornerRadius = 5
         notesBtn.layer.borderWidth = 1
         navigationController?.title = "Details"
@@ -85,6 +91,13 @@ class DetailsViewController: UIViewController {
         navigationItem.rightBarButtonItem = addPhotoBtn
         tabBarController?.tabBar.isHidden = true
         deleteBtn.isEnabled = false
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        setUpUI()
         
         if stadiumDetail.haveVisited == true {
             haveVisitedSwitch.isOn = true
@@ -132,6 +145,19 @@ class DetailsViewController: UIViewController {
     }
     
     @IBAction func deleteBtnPressed(_ sender: Any) {
+        if let selectedIndexes = collectionView.indexPathsForSelectedItems {
+            for indexPath in selectedIndexes {
+                let savedPhoto = savedPhotos[indexPath.row]
+                for (i, photo) in savedPhotos.enumerated() {
+                    if photo.imageData == savedPhoto.imageData {
+                        DataController.shared.viewContext.delete(photo)
+                        print("photo was deleted")
+                        try? DataController.shared.viewContext.save()
+                        savedPhotos.remove(at: i)
+                    }
+                }
+            }
+        }
         mMode = mMode == .select ? .view : .select
     }
     
@@ -199,6 +225,15 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
             let savedPhoto = savedPhotos[indexPath.row]
             vc.photo = savedPhoto
             navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if selectBtn.isEnabled == false {
+            let cell = collectionView.cellForItem(at: indexPath)
+            cell?.layer.borderColor = UIColor.clear.cgColor
+            cell?.layer.borderWidth = 3
+            cell?.isSelected = false
         }
     }
 }
