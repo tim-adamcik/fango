@@ -145,17 +145,13 @@ class DetailsViewController: UIViewController {
     }
     
     @IBAction func deleteBtnPressed(_ sender: Any) {
-        if let selectedIndexes = collectionView.indexPathsForSelectedItems {
+        if let selectedIndexes = collectionView.indexPathsForSelectedItems?.sorted(by: >) {
             for indexPath in selectedIndexes {
                 let savedPhoto = savedPhotos[indexPath.row]
-                for (i, photo) in savedPhotos.enumerated() {
-                    if photo.imageData == savedPhoto.imageData {
-                        DataController.shared.viewContext.delete(photo)
-                        print("photo was deleted")
-                        try? DataController.shared.viewContext.save()
-                        savedPhotos.remove(at: i)
-                    }
-                }
+                DataController.shared.viewContext.delete(savedPhoto)
+                print("photo was deleted")
+                try? DataController.shared.viewContext.save()
+                savedPhotos.remove(at: indexPath.row)
             }
         }
         collectionView.reloadData()
