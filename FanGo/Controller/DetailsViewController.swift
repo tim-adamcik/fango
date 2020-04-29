@@ -32,6 +32,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var selectBtn: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var noPicturesLabel: UILabel!
     
     
     var currentStadiumName: String?
@@ -112,6 +113,7 @@ class DetailsViewController: UIViewController {
         
         savedPhotos = (stadiumDetail.photos?.allObjects as! [Photo])
         if savedPhotos.count > 0 {
+            noPicturesLabel.isHidden = true
             collectionView.reloadData()
         }
     }
@@ -248,6 +250,7 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
                 if let imageData = image.pngData() {
                     saveImageToCoreData(data: imageData)
                 }
+                self.noPicturesLabel.isHidden = true
                 self.collectionView.reloadData()
             }
             dismiss(animated: true, completion: nil)
