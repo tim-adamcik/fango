@@ -3,7 +3,7 @@
     <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="text" optional="YES" attributeType="String"/>
-        <relationship name="stadium" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StadiumDetails" inverseName="notes" inverseEntity="StadiumDetails"/>
+        <relationship name="stadium" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StadiumDetails" inverseName="note" inverseEntity="StadiumDetails"/>
     </entity>
     <entity name="Photo" representedClassName="Photo" syncable="YES" codeGenerationType="class">
         <attribute name="imageData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
@@ -17,7 +17,7 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="state" optional="YES" attributeType="String"/>
         <attribute name="teamName" optional="YES" attributeType="String"/>
-        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="stadium" inverseEntity="Note"/>
+        <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="stadium" inverseEntity="Note"/>
         <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Photo" inverseName="stadium" inverseEntity="Photo"/>
     </entity>
     <elements>
