@@ -156,8 +156,8 @@ class DetailsViewController: UIViewController {
                 savedPhotos.remove(at: indexPath.row)
             }
         }
+         mMode = mMode == .select ? .view : .select
         collectionView.reloadData()
-        mMode = mMode == .select ? .view : .select
     }
     
     @IBAction func selectBtnPressed(_ sender: Any) {
