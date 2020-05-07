@@ -111,11 +111,32 @@ class DetailsViewController: UIViewController {
         } else {
             setTeamNames()
         }
+        setFontColor()
+        
         
         savedPhotos = (stadiumDetail.photos?.allObjects as! [Photo])
         if savedPhotos.count > 0 {
             noPicturesLabel.isHidden = true
             collectionView.reloadData()
+        }
+    }
+    
+    func setFontColor() {
+        let dictOfStadiumAndColors = StadiumArray.dictOfStadiumAndTeamColorHex
+        let stadiumKeys = StadiumArray.stadiumKeys
+        
+        for _ in stadiumKeys {
+            if let stadium = stadiumName.text {
+                if let teamColorHex = dictOfStadiumAndColors[stadium] {
+                    if teamColorHex.count == 6 {
+                        teamName.textColor = UIColor().colorFromHex(teamColorHex)
+                    } else {
+                        teamName.textColor = UIColor.black
+                    }
+                }
+            } else {
+                print("Error setting color")
+            }
         }
     }
     
