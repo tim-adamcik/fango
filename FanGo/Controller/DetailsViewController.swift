@@ -129,7 +129,11 @@ class DetailsViewController: UIViewController {
             if let stadium = stadiumName.text {
                 if let teamColorHex = dictOfStadiumAndColors[stadium] {
                     if teamColorHex.count == 6 {
-                        teamName.textColor = UIColor().colorFromHex(teamColorHex)
+                        let teamColor = UIColor().colorFromHex(teamColorHex)
+                        teamName.textColor = teamColor
+                        stadiumName.textColor = teamColor
+                        cityName.textColor = teamColor
+                        stateName.textColor = teamColor
                     } else {
                         teamName.textColor = UIColor.black
                     }
