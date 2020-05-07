@@ -111,7 +111,7 @@ class DetailsViewController: UIViewController {
         } else {
             setTeamNames()
         }
-        setFontColor()
+//        setFontColor()
         
         
         savedPhotos = (stadiumDetail.photos?.allObjects as! [Photo])
