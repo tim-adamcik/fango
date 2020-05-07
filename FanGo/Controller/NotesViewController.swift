@@ -21,20 +21,30 @@ class NotesViewController: UIViewController, UITextViewDelegate {
         textField.delegate = self
         navigationController?.title = "Notes"
         
-        
+        savedNote = (stadiumDetail.note?.text!)
+        if let savedTextField = savedNote {
+            textField.text = savedTextField
+        } else {
+            textField.becomeFirstResponder()
+        }
     
     }
+    
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        
+        print("text view did begin editing")
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
+    fileprivate func saveText() {
         let note = Note(context: DataController.shared.viewContext)
         note.text = textField.text
         note.stadium = stadiumDetail
         savedNote = textField.text
         DataController.shared.save()
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        saveText()
         print("note was saved")
     }
     

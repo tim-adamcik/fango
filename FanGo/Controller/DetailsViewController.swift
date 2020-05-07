@@ -83,6 +83,7 @@ class DetailsViewController: UIViewController {
     
     
     fileprivate func setUpUI() {
+        
         notesBtn.layer.cornerRadius = 5
         notesBtn.layer.borderWidth = 1
         navigationController?.title = "Details"
@@ -270,6 +271,8 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
         }
         
     }
+
+
     
     
 

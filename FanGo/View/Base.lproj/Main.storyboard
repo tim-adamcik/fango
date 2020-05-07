@@ -272,7 +272,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="IpK-aJ-5hm" firstAttribute="trailing" secondItem="XZZ-tz-0xl" secondAttribute="trailing" id="4dh-Vc-pYO"/>
                             <constraint firstItem="xiN-uN-vCK" firstAttribute="top" secondItem="IpK-aJ-5hm" secondAttribute="top" constant="8" id="Ft8-E6-BaN"/>
