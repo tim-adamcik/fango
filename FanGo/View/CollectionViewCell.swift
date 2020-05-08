@@ -16,8 +16,9 @@ class CollectionViewCell: UICollectionViewCell {
     func setUpCell(_ photo: Photo) {
         
         if photo.imageData != nil {
+            let image = UIImage(data: photo.imageData! as Data)
             DispatchQueue.main.async {
-                self.imageView.image = UIImage(data: photo.imageData! as Data)
+                self.imageView.image = image
             }
         }
     }
