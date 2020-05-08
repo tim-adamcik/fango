@@ -14,7 +14,7 @@ class StadiumArray {
     static let dictOfStadiumAndTeams: [String:String] = [
         "Arrowhead Stadium" : "Kansas City Chiefs",
         "AT&T Stadium" : "Dallas Cowboys",
-        "Allegiant" : "Las Vegas Raiders",
+        "Allegiant Stadium" : "Las Vegas Raiders",
         "Bank of America Stadium" : "Carolina Panthers",
         "CenturyLink Field" : "Seattle Seahawks",
         "Edward Jones Dome" : "Former St. Louis Rams",
@@ -41,7 +41,7 @@ class StadiumArray {
         "RingCentral Coliseum " : "Former Oakland Raiders",
         "Qualcomm Stadium" : "Former San Diego Chargers",
         "Los Angeles Memorial Coliseum" : "Los Angeles Rams",
-        "SoFi" : "Los Angeles Rams/Los Angeles Chargers",
+        "SoFi Stadium" : "Los Angeles Rams/Los Angeles Chargers",
         "Soldier Field" : "Chicago Bears",
         "TIAA Bank Field" : "Jacksonville Jaguars",
         "U.S. Bank Stadium" : "Minnesota Vikings"
@@ -50,7 +50,7 @@ class StadiumArray {
     static let dictOfStadiumAndTeamColorHex: [String:String] = [
         "Arrowhead Stadium" : "E31837",
         "AT&T Stadium" : "003594",
-        "Allegiant" : "A5ACAF",
+        "Allegiant Stadium" : "A5ACAF",
         "Bank of America Stadium" : "0085CA",
         "CenturyLink Field" : "002244",
         "Edward Jones Dome" : "002244",
@@ -77,13 +77,13 @@ class StadiumArray {
         "RingCentral Coliseum " : "A5ACAF",
         "Qualcomm Stadium" : "0080C6",
         "Los Angeles Memorial Coliseum" : "002244",
-        "Sofi" : "Los Angeles Rams/Los Angeles Chargers",
+        "SoFi Stadium" : "Los Angeles Rams/Los Angeles Chargers",
         "Soldier Field" : "0B162A",
         "TIAA Bank Field" : "006778",
         "U.S. Bank Stadium" : "4F2683"
     ]
     
-    static var stadiumKeys = ["Arrowhead Stadium", "AT&T Stadium","Allegiant", "Bank of America Stadium", "CenturyLink Field", "Edward Jones Dome", "Empower Field at Mile High", "FedEx Field", "FirstEnergy Stadium", "Ford Field", "Gillette Stadium", "Hard Rock Stadium", "Heinz Field", "Lambeau Field", "Levi's Stadium", "Lincoln Financial Field", "Lucas Oil Stadium", "M&T Bank Stadium", "Mercedes-Benz Superdome", "Mercedes-Benz Stadium", "MetLife Stadium", "New Era Field", "Nissan Stadium", "NRG Stadium", "Paul Brown Stadium", "Raymond James Stadium", "RingCentral Coliseum ", "Qualcomm Stadium", "Los Angeles Memorial Coliseum", "Sofi", "Soldier Field", "TIAA Bank Field", "U.S. Bank Stadium"]
+    static var stadiumKeys = ["Arrowhead Stadium", "AT&T Stadium", "Allegiant Stadium", "Bank of America Stadium", "CenturyLink Field", "Edward Jones Dome", "Empower Field at Mile High", "FedEx Field", "FirstEnergy Stadium", "Ford Field", "Gillette Stadium", "Hard Rock Stadium", "Heinz Field", "Lambeau Field", "Levi's Stadium", "Lincoln Financial Field", "Lucas Oil Stadium", "M&T Bank Stadium", "Mercedes-Benz Superdome", "Mercedes-Benz Stadium", "MetLife Stadium", "New Era Field", "Nissan Stadium", "NRG Stadium", "Paul Brown Stadium", "Raymond James Stadium", "RingCentral Coliseum ", "Qualcomm Stadium", "Los Angeles Memorial Coliseum", "SoFi Stadium", "Soldier Field", "TIAA Bank Field", "U.S. Bank Stadium"]
     
     
 }
