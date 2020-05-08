@@ -27,9 +27,29 @@ class NotesViewController: UIViewController, UITextViewDelegate {
         } else {
             textField.becomeFirstResponder()
         }
+        setBackgroundColor()
     
     }
     
+    func setBackgroundColor() {
+        let dictOfStadiumAndColors = StadiumArray.dictOfStadiumAndTeamColorHex
+        
+        if let stadium = stadiumDetail.name {
+                if let teamColorHex = dictOfStadiumAndColors[stadium] {
+                    if teamColorHex.count == 6 {
+                        let teamColor = UIColor().colorFromHex(teamColorHex)
+                        textField.backgroundColor = teamColor
+                        textField.textColor = .white
+                    } else {
+                        textField.backgroundColor = .white
+                        textField.textColor = .black
+                    }
+                }
+            } else {
+                print("Error setting color")
+            }
+        
+    }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         print("text view did begin editing")
