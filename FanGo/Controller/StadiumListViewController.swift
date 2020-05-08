@@ -125,6 +125,7 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
         let stadium = CoreDataStadiums.shared.savedStadiumObjects[indexPath.row]
         
         cell.label.text = stadium.name
+        cell.setTableCellBackGroundColor()
         
         return cell
     }

@@ -111,7 +111,7 @@ class DetailsViewController: UIViewController {
         } else {
             setTeamNames()
         }
-//        setFontColor()
+        setFontColor()
         
         
         savedPhotos = (stadiumDetail.photos?.allObjects as! [Photo])
@@ -123,9 +123,9 @@ class DetailsViewController: UIViewController {
     
     func setFontColor() {
         let dictOfStadiumAndColors = StadiumArray.dictOfStadiumAndTeamColorHex
-        let stadiumKeys = StadiumArray.stadiumKeys
         
-        for _ in stadiumKeys {
+        
+        
             if let stadium = stadiumName.text {
                 if let teamColorHex = dictOfStadiumAndColors[stadium] {
                     if teamColorHex.count == 6 {
@@ -141,7 +141,7 @@ class DetailsViewController: UIViewController {
             } else {
                 print("Error setting color")
             }
-        }
+        
     }
     
     func setTeamNames() {

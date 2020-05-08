@@ -27,11 +27,10 @@ extension UIColor {
         var rgb: UInt64 = 0
         Scanner(string: hexString).scanHexInt64(&rgb)
         
-        return UIColor.init(red: CGFloat((rgb & 0xff000000) >> 24) / 255,
-        green: CGFloat((rgb & 0x00ff0000) >> 16) / 255,
-        blue: CGFloat((rgb & 0x0000ff00) >> 8) / 255,
-        alpha: CGFloat(rgb & 0x000000ff) / 255)
-        
+        return UIColor.init(red: CGFloat((rgb & 0xFF0000) >> 16) / 255,
+        green: CGFloat((rgb & 0x00FF00) >> 8) / 255,
+        blue: CGFloat(rgb & 0x0000FF) / 255,
+        alpha: CGFloat(1.0))
     }
     
 }
