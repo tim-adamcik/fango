@@ -33,7 +33,6 @@
 		BA1C228524460F29002439E0 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		BA1C228724461BAC002439E0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		BA226587244F550300430547 /* CoreDataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSingleton.swift; sourceTree = "<group>"; };
-		BA468272246B085700E1117C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BA57D4EC243D0C91002627D9 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		BA821668243BBB9C00F2C575 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BA92E44824646E63008722EA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -102,7 +101,6 @@
 				BAD5988A242E710600D77AAF /* SceneDelegate.swift */,
 				BAD59894242E710A00D77AAF /* Assets.xcassets */,
 				BAD59899242E710A00D77AAF /* Info.plist */,
-				BA468272246B085700E1117C /* README.md */,
 			);
 			path = FanGo;
 			sourceTree = "<group>";
