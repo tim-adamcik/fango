@@ -77,18 +77,40 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" id="bRU-f8-WaK">
+                                <rect key="frame" x="0.0" y="426" width="414" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qm2-C2-4jl">
+                                        <rect key="frame" x="182" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="KUz-hb-aMv"/>
+                                            <constraint firstAttribute="width" constant="50" id="g17-44-wEp"/>
+                                        </constraints>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="qm2-C2-4jl" firstAttribute="centerX" secondItem="bRU-f8-WaK" secondAttribute="centerX" id="5Q2-fu-rMF"/>
+                                    <constraint firstItem="qm2-C2-4jl" firstAttribute="centerY" secondItem="bRU-f8-WaK" secondAttribute="centerY" id="ETg-pD-BMt"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="AHq-76-Hi2" firstAttribute="trailing" secondItem="kjh-gu-Bvo" secondAttribute="trailing" id="0mE-I1-HfN"/>
                             <constraint firstItem="AHq-76-Hi2" firstAttribute="leading" secondItem="kjh-gu-Bvo" secondAttribute="leading" id="5FI-gU-HlZ"/>
                             <constraint firstItem="AHq-76-Hi2" firstAttribute="top" secondItem="kjh-gu-Bvo" secondAttribute="top" id="B36-48-hcG"/>
+                            <constraint firstItem="bRU-f8-WaK" firstAttribute="centerX" secondItem="AHq-76-Hi2" secondAttribute="centerX" id="Hhd-fl-kEL"/>
                             <constraint firstItem="AHq-76-Hi2" firstAttribute="bottom" secondItem="kjh-gu-Bvo" secondAttribute="bottom" id="NXn-JV-Oah"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kjh-gu-Bvo"/>
                     </view>
                     <navigationItem key="navigationItem" title="FanGo" id="wrR-PK-feJ"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="qm2-C2-4jl" id="mqC-6U-bNF"/>
+                        <outlet property="activityView" destination="bRU-f8-WaK" id="jX5-M3-eTa"/>
                         <outlet property="stadiumListTableView" destination="AHq-76-Hi2" id="tAu-Kz-FQr"/>
                     </connections>
                 </viewController>

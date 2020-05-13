@@ -13,8 +13,10 @@ import CoreData
 class StadiumListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var stadiumListTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var activityView: UIView!
+    //    static var savedStadiumObjects = [StadiumDetails]()
     
-//    static var savedStadiumObjects = [StadiumDetails]()
     var fetchedResultsController: NSFetchedResultsController<StadiumDetails>!
     
     fileprivate func reloadSavedData() -> [StadiumDetails]? {
@@ -55,6 +57,7 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
         if savedStadiums != nil && savedStadiums?.count != 0 {
             CoreDataStadiums.shared.savedStadiumObjects = savedStadiums!
             DispatchQueue.main.async {
+                self.activityView.isHidden = true
                 self.stadiumListTableView.reloadData()
             }
         } else {
@@ -68,7 +71,13 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func loadTableView() {
+        activityIndicator.startAnimating()
         _ = SportsDataClient.getStadiums(completion: { (stadiums, error) in
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.activityView.isHidden = true
+            }
+            
             if let error = error {
                 DispatchQueue.main.async {
                     let alertVC = UIAlertController(title: "Error", message: "Error retrieving data", preferredStyle: .alert)
