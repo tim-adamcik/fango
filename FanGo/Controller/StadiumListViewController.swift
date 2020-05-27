@@ -149,4 +149,7 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        50
+    }
 }

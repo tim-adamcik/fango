@@ -17,6 +17,7 @@ class DetailsViewController: UIViewController {
         case select
     }
     
+    @IBOutlet weak var rootStackView: UIStackView!
     @IBOutlet weak var stadiumLabel: UILabel!
     @IBOutlet weak var stadiumName: UILabel!
     @IBOutlet weak var teamLabel: UILabel!
@@ -72,7 +73,7 @@ class DetailsViewController: UIViewController {
     }
     
     lazy var addPhotoBtn: UIBarButtonItem = {
-        let barBtnItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPhotoBtnPressed(_:)))
+        let barBtnItem = UIBarButtonItem(title: "Add Photo", style: .plain, target: self, action: #selector(addPhotoBtnPressed(_:)))
         return barBtnItem
     }()
    lazy var cancelBtn: UIBarButtonItem = {
@@ -80,7 +81,19 @@ class DetailsViewController: UIViewController {
        return barBtnItem
    }()
     
+    private lazy var backgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = setBackGroundColor()
+        view.alpha = 0.9
+        view.layer.cornerRadius = 0.0
+        return view
+    }()
     
+    private func pinBackground(_ view: UIView, to stackView: UIStackView) {
+      view.translatesAutoresizingMaskIntoConstraints = false
+      stackView.insertSubview(view, at: 0)
+      view.pin(to: stackView)
+    }
     
     fileprivate func setUpUI() {
         
@@ -93,6 +106,8 @@ class DetailsViewController: UIViewController {
         navigationItem.rightBarButtonItem = addPhotoBtn
         tabBarController?.tabBar.isHidden = true
         deleteBtn.isEnabled = false
+        pinBackground(backgroundView, to: rootStackView)
+        
     }
     
     override func viewDidLoad() {
@@ -111,7 +126,7 @@ class DetailsViewController: UIViewController {
         } else {
             setTeamNames()
         }
-        setFontColor()
+//        setFontColor()
         
         
         savedPhotos = (stadiumDetail.photos?.allObjects as! [Photo])
@@ -123,7 +138,6 @@ class DetailsViewController: UIViewController {
     
     func setFontColor() {
         let dictOfStadiumAndColors = StadiumArray.dictOfStadiumAndTeamColorHex
-        
         
         
             if let stadium = stadiumName.text {
@@ -141,7 +155,33 @@ class DetailsViewController: UIViewController {
             } else {
                 print("Error setting color")
             }
-        
+    }
+    
+    func setBackGroundColor() -> UIColor? {
+        let dictOfStadiumAndColors = StadiumArray.dictOfStadiumAndTeamColorHex
+        if let stadium = stadiumName.text {
+            if let teamColorHex = dictOfStadiumAndColors[stadium] {
+                if teamColorHex.count == 6 {
+                    let teamColor = UIColor().colorFromHex(teamColorHex)
+                    teamName.textColor = .white
+                    stadiumName.textColor = .white
+                    cityName.textColor = .white
+                    stateName.textColor = .white
+                    stadiumLabel.textColor = .white
+                    teamLabel.textColor = .white
+                    cityLabel.textColor = .white
+                    stateLabel.textColor = .white
+                    haveVisitedLabel.textColor = .white
+                    return teamColor
+                } else {
+                    teamName.textColor = UIColor.black
+                    return .white
+                }
+            }
+        } else {
+            print("Error setting color")
+        }
+        return nil
     }
     
     func setTeamNames() {
