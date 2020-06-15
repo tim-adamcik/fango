@@ -105,6 +105,8 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
             stadiumDetail.city = stadium.city
             if let state = stadium.state {
                 stadiumDetail.state = state
+            } else {
+                stadiumDetail.state = nil
             }
             stadiumDetail.latitude = stadium.geoLat
             stadiumDetail.longitude = stadium.geoLon
