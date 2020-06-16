@@ -50,6 +50,7 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         stadiumListTableView.delegate = self
         stadiumListTableView.dataSource = self
         
