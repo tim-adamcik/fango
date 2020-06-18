@@ -312,8 +312,8 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let image = info[.originalImage] as? UIImage {
-                images.append(image)
-                if let imageData = image.pngData() {
+                let fixedOrientationImage = image.fixOrientation()
+                if let imageData = fixedOrientationImage.pngData() {
                     saveImageToCoreData(data: imageData)
                 }
                 self.noPicturesLabel.isHidden = true

@@ -12,6 +12,7 @@
 		BA226588244F550300430547 /* CoreDataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA226587244F550300430547 /* CoreDataSingleton.swift */; };
 		BA57D4ED243D0C91002627D9 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA57D4EC243D0C91002627D9 /* CollectionViewCell.swift */; };
 		BA5A3591247EBF51009304AE /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A3590247EBF51009304AE /* UIViewExt.swift */; };
+		BA7EB1D3249BBD5A000D52C8 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EB1D2249BBD5A000D52C8 /* UIImageExt.swift */; };
 		BA821669243BBB9C00F2C575 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA821668243BBB9C00F2C575 /* DetailsViewController.swift */; };
 		BA92E44924646E63008722EA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92E44824646E63008722EA /* Colors.swift */; };
 		BABAECC02434E387007EDB47 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECBF2434E387007EDB47 /* TableViewCell.swift */; };
@@ -36,6 +37,7 @@
 		BA226587244F550300430547 /* CoreDataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSingleton.swift; sourceTree = "<group>"; };
 		BA57D4EC243D0C91002627D9 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		BA5A3590247EBF51009304AE /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		BA7EB1D2249BBD5A000D52C8 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		BA821668243BBB9C00F2C575 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BA92E44824646E63008722EA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BABAECBF2434E387007EDB47 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				BA57D4EC243D0C91002627D9 /* CollectionViewCell.swift */,
 				BA92E44824646E63008722EA /* Colors.swift */,
 				BA5A3590247EBF51009304AE /* UIViewExt.swift */,
+				BA7EB1D2249BBD5A000D52C8 /* UIImageExt.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				BAD59889242E710600D77AAF /* AppDelegate.swift in Sources */,
 				BABAECC524350BDD007EDB47 /* StadiumResponse.swift in Sources */,
 				BA821669243BBB9C00F2C575 /* DetailsViewController.swift in Sources */,
+				BA7EB1D3249BBD5A000D52C8 /* UIImageExt.swift in Sources */,
 				BAD5988B242E710600D77AAF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
