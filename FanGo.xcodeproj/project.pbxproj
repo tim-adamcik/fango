@@ -13,6 +13,7 @@
 		BA57D4ED243D0C91002627D9 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA57D4EC243D0C91002627D9 /* CollectionViewCell.swift */; };
 		BA5A3591247EBF51009304AE /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A3590247EBF51009304AE /* UIViewExt.swift */; };
 		BA7EB1D3249BBD5A000D52C8 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EB1D2249BBD5A000D52C8 /* UIImageExt.swift */; };
+		BA7EB1D5249C11AE000D52C8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EB1D4249C11AE000D52C8 /* SplashViewController.swift */; };
 		BA821669243BBB9C00F2C575 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA821668243BBB9C00F2C575 /* DetailsViewController.swift */; };
 		BA92E44924646E63008722EA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92E44824646E63008722EA /* Colors.swift */; };
 		BABAECC02434E387007EDB47 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABAECBF2434E387007EDB47 /* TableViewCell.swift */; };
@@ -38,6 +39,7 @@
 		BA57D4EC243D0C91002627D9 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		BA5A3590247EBF51009304AE /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		BA7EB1D2249BBD5A000D52C8 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
+		BA7EB1D4249C11AE000D52C8 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		BA821668243BBB9C00F2C575 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BA92E44824646E63008722EA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BABAECBF2434E387007EDB47 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				BA821668243BBB9C00F2C575 /* DetailsViewController.swift */,
 				BA1C228524460F29002439E0 /* NotesViewController.swift */,
 				BAC295E72458AFE7007BF2C3 /* SharePhotoViewController.swift */,
+				BA7EB1D4249C11AE000D52C8 /* SplashViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				BA821669243BBB9C00F2C575 /* DetailsViewController.swift in Sources */,
 				BA7EB1D3249BBD5A000D52C8 /* UIImageExt.swift in Sources */,
 				BAD5988B242E710600D77AAF /* SceneDelegate.swift in Sources */,
+				BA7EB1D5249C11AE000D52C8 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +403,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development: Timothy Adamcik (2BTHMT8X96)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Timothy Adamcik (3ZD94BR25U)";
 				CODE_SIGN_STYLE = Manual;
 				INFOPLIST_FILE = FanGo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -408,7 +412,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ta.FanGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = FanGoDevelopmentProfile;
+				PROVISIONING_PROFILE_SPECIFIER = FanGoDistributionProfile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

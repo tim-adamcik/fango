@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="imF-z1-weg">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="STh-om-lcd">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,6 +8,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="Chw-s4-esT">
+            <objects>
+                <viewController id="STh-om-lcd" customClass="SplashViewController" customModule="FanGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8YI-pV-Z75">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fango" translatesAutoresizingMaskIntoConstraints="NO" id="pim-tt-HKI">
+                                <rect key="frame" x="69.5" y="111" width="275" height="275"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="275" id="X1l-L1-HRD"/>
+                                    <constraint firstAttribute="width" constant="275" id="zia-id-c5S"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="AWe-vC-z3t">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.6705882352941176" green="0.85882352941176465" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pim-tt-HKI" firstAttribute="centerX" secondItem="8YI-pV-Z75" secondAttribute="centerX" id="x6O-bM-PQM"/>
+                            <constraint firstItem="pim-tt-HKI" firstAttribute="top" secondItem="PBL-cY-xeS" secondAttribute="top" constant="67" id="xhU-Jl-9TW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PBL-cY-xeS"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="pim-tt-HKI" id="m0n-ow-6cN"/>
+                        <outlet property="indicator" destination="AWe-vC-z3t" id="3rm-zu-ZNm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XJr-AW-kAV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1640.5797101449277" y="62.946428571428569"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JN2-vw-Gxm">
             <objects>
@@ -466,6 +503,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Fango" width="3500" height="3500"/>
         <image name="map" catalog="system" width="128" height="113"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="table" catalog="system" width="128" height="93"/>
