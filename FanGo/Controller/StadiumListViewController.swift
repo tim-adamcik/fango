@@ -90,7 +90,6 @@ class StadiumListViewController: UIViewController, UITableViewDelegate, UITableV
                 if let stadiums = stadiums {
                     StadiumArray.stadiums = stadiums
                     self.saveStadiumToCoreData(stadiums: stadiums)
-                    print(stadiums)
                     DispatchQueue.main.async {
                         self.stadiumListTableView.reloadData()
                     }

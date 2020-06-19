@@ -11,7 +11,7 @@
         <!--Splash View Controller-->
         <scene sceneID="Chw-s4-esT">
             <objects>
-                <viewController id="STh-om-lcd" customClass="SplashViewController" customModule="FanGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="STh-om-lcd" customClass="SplashViewController" customModule="FanGo_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8YI-pV-Z75">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,14 +23,19 @@
                                     <constraint firstAttribute="width" constant="275" id="zia-id-c5S"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="AWe-vC-z3t">
-                                <rect key="frame" x="197" y="438" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="AWe-vC-z3t">
+                                <rect key="frame" x="187" y="438" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="CRe-9g-DEy"/>
+                                    <constraint firstAttribute="height" constant="40" id="PCX-0A-vdP"/>
+                                </constraints>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.6705882352941176" green="0.85882352941176465" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="AWe-vC-z3t" firstAttribute="centerX" secondItem="8YI-pV-Z75" secondAttribute="centerX" id="6WL-W6-NbZ"/>
+                            <constraint firstItem="AWe-vC-z3t" firstAttribute="top" secondItem="pim-tt-HKI" secondAttribute="bottom" constant="52" id="9Pj-XM-TfR"/>
                             <constraint firstItem="pim-tt-HKI" firstAttribute="centerX" secondItem="8YI-pV-Z75" secondAttribute="centerX" id="x6O-bM-PQM"/>
                             <constraint firstItem="pim-tt-HKI" firstAttribute="top" secondItem="PBL-cY-xeS" secondAttribute="top" constant="67" id="xhU-Jl-9TW"/>
                         </constraints>
@@ -83,7 +88,7 @@
         <!--FanGo-->
         <scene sceneID="kke-XT-WSg">
             <objects>
-                <viewController storyboardIdentifier="StadiumListController" id="rTD-sO-MAR" customClass="StadiumListViewController" customModule="FanGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StadiumListController" id="rTD-sO-MAR" customClass="StadiumListViewController" customModule="FanGo_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jEk-cp-KC2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,7 +97,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="bPa-Nj-Y9h" customClass="TableViewCell" customModule="FanGo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="bPa-Nj-Y9h" customClass="TableViewCell" customModule="FanGo_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="23"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bPa-Nj-Y9h" id="w1g-po-avH">
@@ -163,7 +168,7 @@
         <!--Details-->
         <scene sceneID="19a-tX-wNL">
             <objects>
-                <viewController storyboardIdentifier="DetailsViewController" id="keF-Tj-hbe" customClass="DetailsViewController" customModule="FanGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="keF-Tj-hbe" customClass="DetailsViewController" customModule="FanGo_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tPJ-dM-JVZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -307,7 +312,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="dIR-cV-VJb" customClass="CollectionViewCell" customModule="FanGo" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="dIR-cV-VJb" customClass="CollectionViewCell" customModule="FanGo_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4qg-W2-CD8">
@@ -382,7 +387,7 @@
         <!--Share Photo View Controller-->
         <scene sceneID="nJE-Oy-YV3">
             <objects>
-                <viewController storyboardIdentifier="SharePhotoViewController" id="uSE-5w-OAL" customClass="SharePhotoViewController" customModule="FanGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SharePhotoViewController" id="uSE-5w-OAL" customClass="SharePhotoViewController" customModule="FanGo_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="erG-2s-0Ol">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -428,7 +433,7 @@
         <!--Notes View Controller-->
         <scene sceneID="eBc-ts-3fU">
             <objects>
-                <viewController storyboardIdentifier="NotesViewController" id="2TW-dy-PAv" customClass="NotesViewController" customModule="FanGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotesViewController" id="2TW-dy-PAv" customClass="NotesViewController" customModule="FanGo_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6jG-Hl-BrE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -474,7 +479,7 @@
         <!--FanGo-->
         <scene sceneID="JYC-A4-Us2">
             <objects>
-                <viewController storyboardIdentifier="MapViewController" id="X5p-Qd-wrA" customClass="MapViewController" customModule="FanGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="X5p-Qd-wrA" customClass="MapViewController" customModule="FanGo_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gjt-su-ZWJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

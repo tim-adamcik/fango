@@ -48,7 +48,7 @@
 		BABAECC624351A1A007EDB47 /* NetworkingErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingErrors.swift; sourceTree = "<group>"; };
 		BABAECC824351DFD007EDB47 /* StadiumArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumArray.swift; sourceTree = "<group>"; };
 		BAC295E72458AFE7007BF2C3 /* SharePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhotoViewController.swift; sourceTree = "<group>"; };
-		BAD59885242E710600D77AAF /* FanGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FanGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAD59885242E710600D77AAF /* FanGo!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FanGo!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD59888242E710600D77AAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD5988A242E710600D77AAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BAD5988F242E710600D77AAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		BAD59886242E710600D77AAF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BAD59885242E710600D77AAF /* FanGo.app */,
+				BAD59885242E710600D77AAF /* FanGo!.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 			);
 			name = FanGo;
 			productName = FanGo;
-			productReference = BAD59885242E710600D77AAF /* FanGo.app */;
+			productReference = BAD59885242E710600D77AAF /* FanGo!.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -392,7 +392,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ta.FanGo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "FanGo!";
 				PROVISIONING_PROFILE_SPECIFIER = FanGoDevelopmentProfile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -411,7 +411,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ta.FanGo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "FanGo!";
 				PROVISIONING_PROFILE_SPECIFIER = FanGoDistributionProfile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

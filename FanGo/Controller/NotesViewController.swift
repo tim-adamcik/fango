@@ -52,7 +52,7 @@ class NotesViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        print("text view did begin editing")
+        
     }
     
     fileprivate func saveText() {
@@ -65,7 +65,6 @@ class NotesViewController: UIViewController, UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         saveText()
-        print("note was saved")
     }
     
 

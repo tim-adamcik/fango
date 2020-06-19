@@ -217,7 +217,6 @@ class DetailsViewController: UIViewController {
             for indexPath in selectedIndexes {
                 let savedPhoto = savedPhotos[indexPath.row]
                 DataController.shared.viewContext.delete(savedPhoto)
-                print("photo was deleted")
                 try? DataController.shared.viewContext.save()
                 savedPhotos.remove(at: indexPath.row)
             }
@@ -332,7 +331,6 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
             photo.stadium = stadiumDetail
             savedPhotos.append(photo)
             DataController.shared.save()
-            print("image was saved")
         }
         
     }
