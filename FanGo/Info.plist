@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app would like to access your location</string>
+	<string>This app would like to access your location to identify stadiums in your area.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Access required to save photos to library</string>
 	<key>UIApplicationSceneManifest</key>
